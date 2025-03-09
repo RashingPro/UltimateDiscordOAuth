@@ -12,7 +12,7 @@ export class DiscordApiResult {
 export class DiscordApiCore {
     public static async fetch(
         apiEndpoint: string,
-        method: "GET" | "POST" = "POST",
+        method: "GET" | "POST" = "GET",
         data?: {},
         contentType: string = "application/json",
         auth?: string[],

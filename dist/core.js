@@ -17,7 +17,7 @@ export class DiscordApiResult {
 }
 export class DiscordApiCore {
     static fetch(apiEndpoint_1) {
-        return __awaiter(this, arguments, void 0, function* (apiEndpoint, method = "POST", data, contentType = "application/json", auth, apiVersion = 10) {
+        return __awaiter(this, arguments, void 0, function* (apiEndpoint, method = "GET", data, contentType = "application/json", auth, apiVersion = 10) {
             try {
                 let body;
                 const url = DISCORD_API_URL + `v${apiVersion.toString()}` + apiEndpoint;
