@@ -2,7 +2,7 @@ const DISCORD_API_URL = "https://discord.com/api/"
 
 export class DiscordApiResult {
     public readonly status: "success" | "error";
-    public readonly data?: {};
+    public readonly data?: { [key: string]: any };
     constructor(status: "success" | "error", data?: {}) {
         this.status = status;
         if (data) this.data = data;
