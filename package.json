@@ -1,8 +1,8 @@
 {
   "name": "@rashingpro/ultimate-discord-oauth",
-  "version": "0.0.1-alpha",
+  "version": "0.1.0-alpha",
   "description": "Working with Discord OAuth has never been so easy!",
-  "main": "index.d.ts",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RashingPro/UltimateDiscordOAuth.git"
@@ -20,5 +20,8 @@
   "homepage": "https://github.com/RashingPro/UltimateDiscordOAuth#readme",
   "devDependencies": {
     "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "tsc"
   }
 }

@@ -1,6 +1,6 @@
 const DISCORD_API_URL = "https://discord.com/api/"
 
-class DiscordApiResult {
+export class DiscordApiResult {
     public readonly status: "success" | "error";
     public readonly data?: {};
     constructor(status: "success" | "error", data?: {}) {
@@ -31,13 +31,13 @@ export class DiscordApiCore {
             if (auth) {
                 headers.append('Authorization', 'Basic ' + btoa(auth[0] + ":" + auth[1]));
             }
-            console.log(url)
             const response = await fetch(url, {
                 method: method,
                 headers: headers,
                 body: body
             });
             const res_data = await response.json();
+            return new DiscordApiResult("success", res_data);
         } catch (error) {
             return new DiscordApiResult("error", {"error": error});
         }
