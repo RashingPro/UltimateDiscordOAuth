@@ -11,11 +11,11 @@ You need create discord app. Go to https://discord.com/developers/applications/ 
 ### Using Discord OAuth in your project
 Now you're ready to use OAuth in your project.
 1. Import module:
-```javascript
-import DiscordOAuth from "@rashingpro/ultimate-discord-oauth";
-```
+   ```javascript
+   import DiscordOAuth from "@rashingpro/ultimate-discord-oauth";
+   ```
 2. Exchanging code/token:<br>
-   Next, user should go to url that you've copied on previous step. After that discord will redirect user to link \<redirect uri\>?code=<code>. You need to get code from url parameter, than to get token:
+   Next, you should redirect user to url that you've copied on previous step. After that discord will redirect user to link \<redirect uri\>?code=\<code\>. You need to get code from url parameter, than to get token:
    ```javascript
    const tokenResponse = await DiscordOAuth.exchangeCode(<code>, <redirect uri>, <client id>, <client secret>);
    ```
