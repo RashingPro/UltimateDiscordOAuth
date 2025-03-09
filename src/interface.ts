@@ -23,7 +23,7 @@ export class DiscordOAuth {
     }
 
     /**
-     * Get info about current user. If app was authorised with email scope - email will be also provided
+     * Get info about current user. Require identify scope. Optionally, if app was authorised with email scope - email will be also provided
      * @param {string} token auth token
      * @return {Promise<DiscordApiResult>} info about current user
      */
