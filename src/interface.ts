@@ -18,19 +18,21 @@ export class DiscordOAuth {
                 'code': code,
                 'redirect_uri': redirectUri
             },
-            "application/x-www-form-urlencoded",
             [clientId, clientSecret]
         );
     }
 
     /**
      * Get info about current user. If app was authorised with email scope - email will be also provided
+     * @param {string} token auth token
      * @return {Promise<DiscordApiResult>} info about current user
      */
-    public static async getCurrentUser(): Promise<DiscordApiResult> {
+    public static async getCurrentUser(token: string): Promise<DiscordApiResult> {
         return await DiscordApiCore.fetch(
             "/users/@me",
-            "GET"
+            "GET",
+            {},
+            [token]
         );
     }
 }

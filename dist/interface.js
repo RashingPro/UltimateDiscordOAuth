@@ -23,16 +23,17 @@ export class DiscordOAuth {
                 'grant_type': 'authorization_code',
                 'code': code,
                 'redirect_uri': redirectUri
-            }, "application/x-www-form-urlencoded", [clientId, clientSecret]);
+            }, [clientId, clientSecret]);
         });
     }
     /**
      * Get info about current user. If app was authorised with email scope - email will be also provided
+     * @param {string} token auth token
      * @return {Promise<DiscordApiResult>} info about current user
      */
-    static getCurrentUser() {
+    static getCurrentUser(token) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield DiscordApiCore.fetch("/users/@me", "GET");
+            return yield DiscordApiCore.fetch("/users/@me", "GET", {}, [token]);
         });
     }
 }
