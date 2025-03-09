@@ -1,3 +1,4 @@
+[![wakatime](https://wakatime.com/badge/github/RashingPro/UltimateDiscordOAuth.svg)](https://wakatime.com/badge/github/RashingPro/UltimateDiscordOAuth)
 ## Installation
 First of all, you should install package using npm:
 ```
