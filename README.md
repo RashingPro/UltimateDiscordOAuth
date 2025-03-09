@@ -7,7 +7,7 @@ npm i @rashingpro/ultimate-discord-oauth
 
 ## Using
 > [!NOTE]
-> This package originally written on TypeScript and docs also provided with TypeScript using. Using on JS can be different, feel freely to use issues section
+> This package originally written on TypeScript and docs also provided with TypeScript using. Using on JS can be different, feel freely to use issues section for questions and bugs
 ### Creating Discord app
 You need create discord app. Go to https://discord.com/developers/applications/ -> New Application. After app will created, select OAuth2 in the left-side menu. Copy client id, then click Reset secret and copy it too.
 > [!CAUTION]
