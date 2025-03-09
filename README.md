@@ -14,10 +14,10 @@ Now you're ready to use OAuth in your project.
 ```javascript
 import DiscordOAuth from "@rashingpro/ultimate-discord-oauth";
 ```
-2. Exchanging code/token:
+2. Exchanging code/token:<br>
    Next, user should go to url that you've copied on previous step. After that discord will redirect user to link \<redirect uri\>?code=<code>. You need to get code from url parameter, than to get token:
-```javascript
-const tokenResponse = await DiscordOAuth.exchangeCode(<code>, <redirect uri>, <client id>, <client secret>);
-```
-Strongly recommended not to store client id and secret in code (in variables). Instead of this, use `.env` files or any other way.<br>
-`exchangeCode()` function will return object of class `DiscordApiResult`. More about it read in full docs here.
+   ```javascript
+   const tokenResponse = await DiscordOAuth.exchangeCode(<code>, <redirect uri>, <client id>, <client secret>);
+   ```
+   Strongly recommended not to store client id and secret in code (in variables). Instead of this, use `.env` files or any other way.<br>
+   `exchangeCode()` function will return object of class `DiscordApiResult`. More about it read in full docs here.
