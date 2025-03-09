@@ -34,7 +34,7 @@ export class DiscordApiCore {
             const response = await fetch(url, {
                 method: method,
                 headers: headers,
-                body: body
+                body: body ? body : undefined
             });
             const res_data = await response.json();
             return new DiscordApiResult("success", res_data);
