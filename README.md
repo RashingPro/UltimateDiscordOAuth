@@ -1,4 +1,7 @@
 [![wakatime](https://wakatime.com/badge/github/RashingPro/UltimateDiscordOAuth.svg)](https://wakatime.com/badge/github/RashingPro/UltimateDiscordOAuth)
+> [!NOTE]
+> Package still in active developing state, issues report are very important!
+
 ## Installation
 First of all, you should install package using npm:
 ```
