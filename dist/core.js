@@ -35,7 +35,12 @@ export class DiscordApiCore {
                 const headers = new Headers();
                 headers.append("Content-Type", contentType);
                 if (auth) {
-                    headers.append('Authorization', `${authType} ` + btoa(auth.join(':')));
+                    if (authType === "Basic") {
+                        headers.append('Authorization', `Basic ` + btoa(auth.join(':')));
+                    }
+                    else {
+                        headers.append('Authorization', `Bearer ` + auth[0]);
+                    }
                 }
                 const response = yield fetch(url, {
                     method: method,
@@ -43,6 +48,9 @@ export class DiscordApiCore {
                     body: body ? body : undefined
                 });
                 const res_data = yield response.json();
+                if (!response.ok) {
+                    return new DiscordApiResult("error", { "error": response.statusText });
+                }
                 return new DiscordApiResult("success", res_data);
             }
             catch (error) {

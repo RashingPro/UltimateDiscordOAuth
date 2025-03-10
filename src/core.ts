@@ -15,7 +15,7 @@ export class DiscordApiCore {
         method: "GET" | "POST" = "GET",
         data?: {},
         auth?: string[],
-        authType: string = "Bearer",
+        authType: "Basic" | "Bearer" = "Bearer",
         apiVersion: number = 10,
         contentType: string = "application/x-www-form-urlencoded",
     ) {
@@ -36,7 +36,12 @@ export class DiscordApiCore {
             const headers = new Headers();
             headers.append("Content-Type", contentType);
             if (auth) {
-                headers.append('Authorization', `${authType} ` + btoa(auth.join(':')));
+                if (authType === "Basic") {
+                    headers.append('Authorization', `Basic ` + btoa(auth.join(':')));
+                } else {
+                    headers.append('Authorization', `Bearer ` + auth[0]);
+                }
+
             }
             const response = await fetch(url, {
                 method: method,
@@ -44,6 +49,9 @@ export class DiscordApiCore {
                 body: body ? body : undefined
             });
             const res_data = await response.json();
+            if (!response.ok) {
+                return new DiscordApiResult("error", {"error": response.statusText});
+            }
             return new DiscordApiResult("success", res_data);
         } catch (error) {
             return new DiscordApiResult("error", {"error": error});

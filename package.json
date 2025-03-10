@@ -1,6 +1,6 @@
 {
   "name": "@rashingpro/ultimate-discord-oauth",
-  "version": "0.1.3-alpha",
+  "version": "0.1.3-alpha-HOTFIX-1",
   "description": "Working with Discord OAuth has never been so easy!",
   "main": "index.js",
   "repository": {

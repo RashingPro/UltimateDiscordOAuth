@@ -37,9 +37,9 @@ export class DiscordOAuth {
         );
     }
 
-    public static async getUser(token: string, userId: number): Promise<DiscordApiResult> {
+    public static async getUser(token: string, userId: string): Promise<DiscordApiResult> {
         return await DiscordApiCore.fetch(
-            `/users/${userId.toString()}`,
+            `/users/${userId}`,
             "GET",
             {},
             [token]
