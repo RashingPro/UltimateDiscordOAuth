@@ -38,7 +38,7 @@ export class DiscordOAuth {
     }
     static getUser(token, userId) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield DiscordApiCore.fetch(`/users/${userId.toString()}`, "GET", {}, [token]);
+            return yield DiscordApiCore.fetch(`/users/${userId}`, "GET", {}, [token]);
         });
     }
 }
