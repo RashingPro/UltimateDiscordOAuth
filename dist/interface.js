@@ -23,7 +23,7 @@ export class DiscordOAuth {
                 'grant_type': 'authorization_code',
                 'code': code,
                 'redirect_uri': redirectUri
-            }, [clientId, clientSecret]);
+            }, [clientId, clientSecret], 'Basic');
         });
     }
     /**

@@ -15,6 +15,7 @@ export class DiscordApiCore {
         method: "GET" | "POST" = "GET",
         data?: {},
         auth?: string[],
+        authType: string = "Bearer",
         apiVersion: number = 10,
         contentType: string = "application/x-www-form-urlencoded",
     ) {
@@ -35,7 +36,7 @@ export class DiscordApiCore {
             const headers = new Headers();
             headers.append("Content-Type", contentType);
             if (auth) {
-                headers.append('Authorization', 'Basic ' + btoa(auth.join(':')));
+                headers.append('Authorization', `${authType} ` + btoa(auth.join(':')));
             }
             const response = await fetch(url, {
                 method: method,

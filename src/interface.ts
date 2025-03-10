@@ -18,7 +18,8 @@ export class DiscordOAuth {
                 'code': code,
                 'redirect_uri': redirectUri
             },
-            [clientId, clientSecret]
+            [clientId, clientSecret],
+            'Basic'
         );
     }
 
