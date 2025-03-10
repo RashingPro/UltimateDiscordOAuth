@@ -19,13 +19,18 @@ export class DiscordApiCore {
     static fetch(apiEndpoint_1) {
         return __awaiter(this, arguments, void 0, function* (apiEndpoint, method = "GET", data, auth, apiVersion = 10, contentType = "application/x-www-form-urlencoded") {
             try {
-                let body;
                 const url = DISCORD_API_URL + `v${apiVersion.toString()}` + apiEndpoint;
-                if (contentType === "application/x-www-form-urlencoded") {
-                    body = new URLSearchParams(data).toString();
+                let body;
+                if (!data) {
+                    body = undefined;
                 }
                 else {
-                    body = JSON.stringify(data);
+                    if (contentType === "application/x-www-form-urlencoded") {
+                        body = new URLSearchParams(data).toString();
+                    }
+                    else {
+                        body = JSON.stringify(data);
+                    }
                 }
                 const headers = new Headers();
                 headers.append("Content-Type", contentType);

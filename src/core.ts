@@ -19,13 +19,19 @@ export class DiscordApiCore {
         contentType: string = "application/x-www-form-urlencoded",
     ) {
         try {
-            let body: string;
             const url = DISCORD_API_URL + `v${apiVersion.toString()}` + apiEndpoint;
-            if (contentType === "application/x-www-form-urlencoded") {
-                body = new URLSearchParams(data).toString();
+
+            let body: string | undefined;
+            if (!data) {
+                body = undefined
             } else {
-                body = JSON.stringify(data);
+                if (contentType === "application/x-www-form-urlencoded") {
+                    body = new URLSearchParams(data).toString();
+                } else {
+                    body = JSON.stringify(data);
+                }
             }
+
             const headers = new Headers();
             headers.append("Content-Type", contentType);
             if (auth) {

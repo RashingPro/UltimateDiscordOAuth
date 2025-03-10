@@ -35,4 +35,13 @@ export class DiscordOAuth {
             [token]
         );
     }
+
+    public static async getUser(token: string, userId: number): Promise<DiscordApiResult> {
+        return await DiscordApiCore.fetch(
+            `/users/${userId.toString()}`,
+            "GET",
+            {},
+            [token]
+        );
+    }
 }
