@@ -36,4 +36,4 @@ Now you're ready to use OAuth in your project.
 > [!WARNING]
 > Strongly recommended **NOT** to store client id and secret in code (in variables). Instead of this, use `.env` files or any other way.
    
-   `exchangeCode()` function will return object of class `DiscordApiResult`. More about it read in full docs [here](https://github.com/RashingPro/UltimateDiscordOAuth/wiki).
+   `exchangeCode()` function will return object of class `DiscordApiResult`. More about it read in full docs [here](https://github.com/RashingPro/UltimateDiscordOAuth/wiki/class-DiscordApiResult).
