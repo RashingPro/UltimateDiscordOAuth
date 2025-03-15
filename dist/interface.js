@@ -28,7 +28,7 @@ export class DiscordOAuth {
     }
     /**
      * Get info about current user. Require identify scope. Optionally, if app was authorised with email scope - email will be also provided
-     * @param {string} token auth token
+     * @param {string} token
      * @return {Promise<DiscordApiResult>} info about current user
      */
     static getCurrentUser(token) {
@@ -36,6 +36,11 @@ export class DiscordOAuth {
             return yield DiscordApiCore.fetch("/users/@me", "GET", {}, [token]);
         });
     }
+    /**
+     * Get info about user with specified userId
+     * @param token
+     * @param userId
+     */
     static getUser(token, userId) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield DiscordApiCore.fetch(`/users/${userId}`, "GET", {}, [token]);
